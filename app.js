@@ -21,7 +21,7 @@ app.use("/new", newMessageRouter);
 app.use("/", indexRouter);
 
 
-const port = 8080;
+const port =  process.env.PORT || 8080;
 
 app.listen(port, (error)=>{
     if(error){
