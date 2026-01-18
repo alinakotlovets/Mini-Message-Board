@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <title>Add new</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<%- include("nav-bar") %>
+<div class="page-content-box">
+<form class="border" method="POST" action="/new">
+    <h1 class="page-title">Add new massage</h1>
+    <div class="form-inputs-box">
+        <label for="username">Username:</label>
+        <input type="text" placeholder="Write your username" id="username" name="username" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+    </div>
+    <div class="form-btn-box">
+    <button class="primary-btn" type="submit">Submit</button>
+    <a class="white-btn" href="/">Cansel</a>
+    </div>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Message info</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<%- include("nav-bar") %>
+<div class="page-content-box">
+<div class="border message-detail-card">
+    <h1 class="margin-bottom-20px">Message info</h1>
+    <div class="message-detail-text-box">
+        <h4 class="message-detail-text-label">Message:</h4>
+        <h2 class="message-detail-text-content"><%= message.text %></h2>
+    </div>
+    <div class="message-detail-text-box">
+        <h4  class="message-detail-text-label">Author:</h4>
+        <h3 class="message-detail-text-content"><%= message.username %></h3>
+    </div>
+    <div class="message-detail-text-box">
+        <h4  class="message-detail-text-label">Added at:</h4>
+        <p><%= message.formattedDate %></p>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+    <title>Message board</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<%- include("nav-bar") %>
+<div class="page-content-box">
+    <h1 class="page-title">Message board</h1>
+    <ul class="messages-grid">
+        <% messages.forEach((message) => { %>
+            <%- include('message', {message: message}); %>
+        <% }); %>
+    </ul>
+</div>
+</body>
+</html>
