@@ -5,7 +5,7 @@ import messageInfoRouter from "./routes/messageInfoRouter.js";
 import * as path from "node:path";
 import {dirname} from "node:path";
 import {fileURLToPath} from "node:url";
-import messages from "./db.js";
+
 
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
