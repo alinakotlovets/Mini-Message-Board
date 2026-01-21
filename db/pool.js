@@ -1,4 +1,4 @@
-import {Pool} from "pg";
+import { Pool } from "pg";
 import 'dotenv/config';
 
 const dbUrl = process.env.NODE_ENV === 'production'
@@ -6,5 +6,8 @@ const dbUrl = process.env.NODE_ENV === 'production'
     : process.env.DEV_DATABASE_URL;
 
 export const pool = new Pool({
-    connectionString: dbUrl
+    connectionString: dbUrl,
+    ssl: process.env.NODE_ENV === 'production'
+        ? { rejectUnauthorized: false }
+        : false
 });
