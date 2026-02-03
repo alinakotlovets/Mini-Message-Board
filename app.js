@@ -2,6 +2,7 @@ import express from "express";
 import indexRouter from "./routes/indexRouter.js";
 import newMessageRouter from "./routes/newMessageRouter.js";
 import messageInfoRouter from "./routes/messageInfoRouter.js";
+import CustomNotFoundError from "./errors/CustomNotFoundError.js";
 import * as path from "node:path";
 import {dirname} from "node:path";
 import {fileURLToPath} from "node:url";
