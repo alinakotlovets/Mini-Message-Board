@@ -22,7 +22,7 @@ app.use("/new", newMessageRouter);
 app.use("/", indexRouter);
 
 
-const port =  process.env.PORT || 8080;
+const port =  process.env.PORT || 3001;
 
 app.listen(port, (error)=>{
     if(error){
