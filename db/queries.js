@@ -1,19 +1,18 @@
-import {pool} from "./pool.js"
+import { prisma } from '../lib/prisma.js';
 
-export async function getAllMessages(){
-    const {rows} = await pool.query("SELECT * FROM  messages");
-    return rows;
+export async function getAllMessages() {
+    return await prisma.message.findMany();
 }
 
-export async function getMessageByIdFromBd(messageId){
-    const { rows } = await pool.query(
-        "SELECT * FROM messages WHERE id = $1", [messageId]);
-    return rows;
+export async function getMessageByIdFromBd(messageId) {
+    const message = await prisma.message.findUnique({
+        where: { id: Number(messageId) },
+    });
+    return message ? [message] : [];
 }
 
-export async function addNewMessageToDb(text, username){
-    await pool.query(
-        "INSERT INTO messages (text, username, date) VALUES ($1, $2, NOW())",
-        [text, username]
-    );
+export async function addNewMessageToDb(text, username) {
+    await prisma.message.create({
+        data: { text, username },
+    });
 }
